@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Viviri Capital  Test - Plumber Service]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Plumber Service Test Cases(failed)">
+    <classes>
+      <class name="com.crm.qa.testcases.PlumberService">
+        <methods>
+          <include name="test" invocation-numbers="0"/>
+          <include name="loadConfig"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.PlumberService -->
+    </classes>
+  </test> <!-- Plumber Service Test Cases(failed) -->
+</suite> <!-- Failed suite [Viviri Capital  Test - Plumber Service] -->

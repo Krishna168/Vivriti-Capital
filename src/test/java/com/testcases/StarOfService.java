@@ -23,17 +23,17 @@ public class StarOfService extends TestBase {
 
 		initialization();
 
-		HomePage hp = new HomePage();
-		ProblemItem pi = new ProblemItem();
-		NeedPage np = new NeedPage();
-		ProblemDescription pd = new ProblemDescription();
-		PlumberAddInfo pa = new PlumberAddInfo();
-		PlumbingHelpTime ph = new PlumbingHelpTime();
-		DateSelection ds = new DateSelection();
-		TimeSelection ts = new TimeSelection();
-		EmailOrPhoneNumber ep = new EmailOrPhoneNumber();
+		HomePage homepage = new HomePage();
+		ProblemItem problemItem = new ProblemItem();
+		NeedPage needPage = new NeedPage();
+		ProblemDescription problemDescription = new ProblemDescription();
+		PlumberAddInfo plumberAddInfo = new PlumberAddInfo();
+		PlumbingHelpTime plumberHelpTime = new PlumbingHelpTime();
+		DateSelection dateSelection = new DateSelection();
+		TimeSelection timeSelection = new TimeSelection();
+		EmailOrPhoneNumber emailOrPhoneNumber = new EmailOrPhoneNumber();
 
-		hp.getHomePage(location);
+		homepage.getHomePage(location);
 
 		for (int i = 0; i < 10; i++) {
 
@@ -41,36 +41,43 @@ public class StarOfService extends TestBase {
 					.getText();
 
 			switch (page) {
+
 			case "The problems are to do with which of the following things?": {
-				pi.getproblemsFacingItems();
+				problemItem.getproblemsFacingItems();
 				break;
 			}
+
 			case "What do you need done?": {
-				np.getNeedPageItems();
+				needPage.getNeedPageItems();
 				break;
 			}
+
 			case "What problem(s) do you have?": {
-				pd.getProblemDescription();
+				problemDescription.getProblemDescription();
 				break;
 			}
+
 			case "Is there anything else that the Plumber needs to know?": {
-				pa.getplumberAdditionalInfoPage(text);
+				plumberAddInfo.getplumberAdditionalInfoPage(text);
 				break;
 			}
 
 			case "When do you require plumbing?": {
-				ph.geTimeOfPlumbingPage();
+				plumberHelpTime.geTimeOfPlumbingPage();
 				break;
 			}
+
 			case "On what date?": {
-				ds.getDatePage();
-				ts.getTimePage(time);
+				dateSelection.getDatePage();
+				timeSelection.getTimePage(time);
 				break;
 			}
+
 			case "Get responses faster with SMS notifications.": {
-				ep.getEmailOrPhoneNumberField();
+				emailOrPhoneNumber.getEmailOrPhoneNumberField();
 				break;
 			}
+
 
 			}
 

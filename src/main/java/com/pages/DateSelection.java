@@ -11,7 +11,7 @@ public class DateSelection extends TestBase {
 	@FindBy(xpath = "//div[text()='On what date?']")
 	WebElement dateSelectionPageTitle;
 
-	@FindBy(xpath = "(//button[text()='20'])[2]")
+	@FindBy(xpath = "(//button[text()='6'])[2]")
 	WebElement dateSelection;
 
 	@FindBy(xpath = "//button[text()='Next']")

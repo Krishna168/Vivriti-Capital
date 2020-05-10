@@ -3,7 +3,6 @@ package com.testcases;
 import java.io.IOException;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import com.base.TestBase;
 import com.pages.DateSelection;
 import com.pages.EmailOrPhoneNumber;
@@ -19,7 +18,7 @@ import com.testdata.DataProviderClass;
 public class StarOfService extends TestBase {
 
 	@Test(dataProvider = "GetData", dataProviderClass = DataProviderClass.class)
-	public void test(String location, String text, String time) throws IOException {
+	public void test(String location, String text,String howLongValue) throws IOException {
 
 		initialization();
 
@@ -37,7 +36,7 @@ public class StarOfService extends TestBase {
 
 		for (int i = 0; i < 10; i++) {
 
-			String page = driver.findElement(By.xpath("//*[@class='v2__title___1Covm v2__commonFormTitle___3kSbd']"))
+			String page = driver.findElement(By.xpath("//*[@class='v2__title___1Covm v2__commonFormTitle___3kSbd'] | //div[@class='styles__titleV2___15cVd styles__titleBase___JOpQ3']"))
 					.getText();
 
 			switch (page) {
@@ -69,7 +68,11 @@ public class StarOfService extends TestBase {
 
 			case "On what date?": {
 				dateSelection.getDatePage();
-				timeSelection.getTimePage(time);
+				break;
+			}
+
+			case "What time do you need the Plumber?" :{
+				timeSelection.getTimePage(howLongValue);
 				break;
 			}
 
